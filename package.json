@@ -1,0 +1,15 @@
+{
+  "name": "storygenerator-db",
+  "version": "1.0.0",
+  "description": "PostgreSQL database service for StoryGenerator",
+  "main": "index.js",
+  "scripts": {
+    "start": "start-db.bat",
+    "init": "psql -h localhost -p 4000 -U storygen_user -d storygenerator -f schema.sql && psql -h localhost -p 4000 -U storygen_user -d storygenerator -f init.sql",
+    "reset": "dropdb -h localhost -p 4000 -U postgres storygenerator && npm run start",
+    "connect": "psql -h localhost -p 4000 -U storygen_user -d storygenerator"
+  },
+  "keywords": ["database", "postgresql", "storygenerator"],
+  "author": "",
+  "license": "ISC"
+}
